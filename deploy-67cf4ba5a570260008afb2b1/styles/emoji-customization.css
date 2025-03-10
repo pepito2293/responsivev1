@@ -1,0 +1,32 @@
+/* --- Section de personnalisation des émojis --- */
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* --- Conteneur des tableaux des émojis --- */
+.emoji-table-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#emojiTableLeft, #emojiTableRight {
+    width: 45%;
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#emojiTableLeft th, #emojiTableRight th,
+#emojiTableLeft td, #emojiTableRight td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
