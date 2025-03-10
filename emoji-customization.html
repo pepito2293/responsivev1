@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnalisation des Émojis - Dobble</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            height: auto;
+            z-index: 100;
+        }
+        
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .action-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .action-button.primary {
+            background-color: #ffd700;
+            color: #000;
+        }
+        
+        .emoji-tables-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .emoji-table-wrapper {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background-color: #ffd700;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .reset-button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-button:hover {
+            transform: rotate(180deg);
+            background-color: #f57c00;
+        }
+
+        .card-back-selector {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .card-back-selector h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="isla_200x200.74417624_o08o07y0.jpg" alt="Logo Créations Dupdup" class="logo">
+
+    <main>
+        <h1>Personnalisation des Émojis</h1>
+        <div class="wave"></div>
+
+        <div class="toolbar">
+            <div class="toolbar-group">
+                <button id="resetAll" class="action-button">
+                    <i class="fas fa-undo"></i>
+                    Réinitialiser par défaut
+                </button>
+                <button id="saveEmojis" class="action-button primary">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+            </div>
+            
+            <div class="toolbar-group">
+                <a href="generateur.html" class="action-button">
+                    <i class="fas fa-dice"></i>
+                    Générer les cartes
+                </a>
+                <a href="index.html" class="action-button">
+                    <i class="fas fa-info-circle"></i>
+                    Consignes
+                </a>
+            </div>
+        </div>
+
+        <div class="emoji-tables-container">
+            <div class="emoji-table-wrapper">
+                <h3>Émojis 1 à 29</h3>
+                <table id="leftEmojiTable">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Émoji actuel</th>
+                            <th>Nouvelle image</th>
+                            <th>Réinitialiser</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rempli dynamiquement par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="emoji-table-wrapper">
+                <h3>Émojis 30 à 57</h3>
+                <table id="rightEmojiTable">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Émoji actuel</th>
+                            <th>Nouvelle image</th>
+                            <th>Réinitialiser</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rempli dynamiquement par JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card-back-selector">
+            <h3>Dos de carte</h3>
+            <label for="cardBackUpload" class="action-button">
+                <i class="fas fa-image"></i>
+                Choisir un dos de carte
+            </label>
+            <input type="file" id="cardBackUpload" accept="image/*" style="display: none;">
+            <div id="cardBackPreview" style="display: none; margin-top: 10px;">
+                <img src="" alt="Aperçu du dos de carte" style="max-width: 100px;">
+                <button id="removeCardBack" class="action-button">
+                    <i class="fas fa-trash"></i>
+                    Supprimer
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Créations Dupdup</p>
+    </footer>
+
+    <script src="scripts/customization.js"></script>
+    <script>
+        // Script pour afficher des informations de diagnostic au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Page de personnalisation chargée");
+            console.log("Emojis par défaut disponibles:", window.DEFAULT_EMOJIS);
+            console.log("Emojis personnalisés:", customEmojis);
+            
+            // Vérifier si les tableaux sont correctement initialisés
+            setTimeout(() => {
+                const leftTable = document.getElementById('leftEmojiTable');
+                const rightTable = document.getElementById('rightEmojiTable');
+                
+                if (leftTable) {
+                    console.log("Table gauche: ", leftTable.rows.length, "lignes");
+                } else {
+                    console.error("Table gauche non trouvée!");
+                }
+                
+                if (rightTable) {
+                    console.log("Table droite: ", rightTable.rows.length, "lignes");
+                } else {
+                    console.error("Table droite non trouvée!");
+                }
+
+                // Vérifier les cellules d'emoji
+                for (let i = 0; i < 10; i++) {
+                    const cell = document.getElementById(`emoji-${i}`);
+                    console.log(`Cellule emoji-${i}:`, cell ? cell.innerHTML || "vide" : "non trouvée");
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+/* --- Styles globaux pour la page --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #c4e7fd 0%, #9ed8ff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Logo --- */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Menu hamburger --- */
+.menu-hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.menu-hamburger a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.menu-hamburger a:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.menu-hamburger a.active {
+    background-color: #ffd700;
+    color: #000;
+}
+
+/* --- Style du titre principal (h1) --- */
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* --- Vague décorative sous le titre --- */
+.wave {
+    background-color: #ffd700;
+    height: 30px;
+    width: 100%;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(180deg);
+    margin-bottom: 30px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Barre d'outils --- */
+.toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.action-button i {
+    font-size: 18px;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-button.primary {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.action-button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* --- Instructions --- */
+.instructions {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    width: 90%;
+}
+
+.instructions h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #444;
+}
+
+.instructions li i {
+    color: #007bff;
+    width: 24px;
+    text-align: center;
+}
+
+/* --- Personnalisation des cartes --- */
+.card-customization {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.slider-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider-group {
+    margin: 15px 0;
+}
+
+.slider-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.slider-label i {
+    color: #666;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* --- Grille des cartes --- */
+.card-container-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 0;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    border: 3px solid #333;
+}
+
+/* Styles pour les cartes rondes */
+.card.round {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Sélecteur de forme de carte */
+.shape-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.shape-button {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.shape-button i {
+    font-size: 16px;
+}
+
+.shape-button.active {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #333;
+    font-weight: 600;
+}
+
+.shape-button:hover:not(.active) {
+    border-color: #ccc;
+    background-color: #f5f5f5;
+}
+
+/* --- Mode édition --- */
+.edit-mode .card {
+    cursor: pointer;
+    border: 3px dashed #ffd700;
+}
+
+.edit-mode .symbol {
+    cursor: grab;
+}
+
+.edit-mode .symbol.selected {
+    outline: 2px solid #ffd700;
+    z-index: 1000;
+}
+
+.edit-mode .symbol:hover {
+    outline: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+/* --- Symboles --- */
+.symbol {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: transform 0.2s ease;
+    background: none;
+}
+
+.symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --- Contrôles de taille et rotation --- */
+#sizeControl {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: none;
+}
+
+#sizeControl .control-group {
+    display: flex;
+    gap: 30px;
+}
+
+#sizeControl .slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sizeControl label {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#sizeControl input[type="range"] {
+    width: 200px;
+}
+
+/* --- Footer --- */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+}
+
+/* --- Loading Overlay --- */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1400px) {
+    .card-container {
+        grid-template-columns: repeat(3, 300px);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card-container {
+        grid-template-columns: repeat(2, 300px);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-container {
+        grid-template-columns: repeat(1, 300px);
+        gap: 20px;
+    }
+}
+
+/* Styles responsifs pour tablettes */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 15px 0;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .toolbar-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+
+    #cardContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .logo {
+        width: 60px;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+/* Styles responsifs pour téléphones */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        padding: 10px 0;
+    }
+
+    .toolbar {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .toolbar-group {
+        gap: 8px;
+    }
+
+    .action-button {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    #cardContainer {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .symbol {
+        font-size: 18px;
+    }
+
+    .card-customization {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .wave {
+        height: 30px;
+    }
+}
+
+/* Ajustements pour les très petits écrans */
+@media screen and (max-width: 320px) {
+    .card {
+        width: 130px;
+        height: 130px;
+    }
+
+    .symbol {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .action-button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Styles pour l'impression */
+@media print {
+    body {
+        padding: 0;
+        background: none;
+    }
+
+    .toolbar, 
+    .card-customization, 
+    .logo,
+    .wave {
+        display: none;
+    }
+
+    #cardContainer {
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        background: none;
+        box-shadow: none;
+        width: 180px;
+        height: 180px;
+    }
+
+    .symbol {
+        color: black !important;
+        opacity: 1 !important;
+    }
+}
